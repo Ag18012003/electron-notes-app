@@ -1,0 +1,41 @@
+{
+  "name": "electron-notes-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron .",
+    "package-win": "electron-packager . electron-notes-app --platform=win32 --arch=x64 --out=dist --overwrite",
+    "package-mac": "electron-packager . electron-notes-app --platform=darwin --arch=x64 --out=dist --overwrite",
+    "package-linux": "electron-packager . electron-notes-app --platform=linux --arch=x64 --out=dist --overwrite",
+    "dist": "electron-builder"
+  },
+  "build": {
+    "appId": "com.yourcompany.electronnotesapp",
+    "productName": "Electron Notes App",
+    "files": [
+      "**/*"
+    ],
+    "directories": {
+      "output": "dist"
+    },
+    "win": {
+      "target": "nsis"
+    },
+    "mac": {
+      "target": "dmg"
+    },
+    "linux": {
+      "target": "AppImage"
+    }
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^33.0.2",
+    "electron-packager": "^17.1.2",
+    "electron-builder": "^23.6.0"
+  }
+}
